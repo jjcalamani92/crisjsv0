@@ -1,8 +1,8 @@
 import { Site } from "../interfaces/siteV1";
 import { ParsedUrlQuery } from "querystring";
 import { Product } from "../interfaces/ecommerceV1";
-import { Option } from "../components/formModal/formProduct";
 import { getQuery, slug } from './function';
+import { Option } from "../interfaces/Cart";
 
 export const childrens0 = (site: Site) => {
   return site?.children;

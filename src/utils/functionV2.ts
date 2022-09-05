@@ -1,8 +1,9 @@
-import { Option } from "../components/formModal/formProduct";
+
 import { getQuery } from "./function";
 import { ChildrenV2, SiteV2 } from "../interfaces/siteV2";
 import { ProductV2, ProductsV2 } from '../interfaces/ecommerceV2';
 import { BlogV2 } from "../interfaces/blogV2";
+import { Option } from "../interfaces/Cart";
 
 export const childrens0 = (site: SiteV2) => {
   return site?.children;

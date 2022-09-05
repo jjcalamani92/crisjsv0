@@ -13,3 +13,8 @@ export interface ICart {
 	color: string;
   quantity: number;
 }
+export interface Option {
+  value: string;
+  label: string;
+  children?: Option[];
+}
