@@ -93,12 +93,12 @@ export const HeaderPage = () => {
             <a href="#">
               <span className="sr-only">Workflow</span>
               <Image
-                        width={40}
-                        height={40}
-                        objectFit="cover"
-                        src="/logo.svg"
-                        alt="Workflow"
-                      />
+                width={40}
+                height={40}
+                objectFit="cover"
+                src="/logo.svg"
+                alt="Workflow"
+              />
             </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -300,13 +300,13 @@ export const HeaderPage = () => {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                <Image
-                        width={40}
-                        height={40}
-                        objectFit="cover"
-                        src="/logo.svg"
-                        alt="Workflow"
-                      />
+                  <Image
+                    width={40}
+                    height={40}
+                    objectFit="cover"
+                    src="/logo.svg"
+                    alt="Workflow"
+                  />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
