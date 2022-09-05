@@ -31,6 +31,8 @@ const Index: NextPage = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { sitesV2 } = await graphQLClientS.request(SITESV2)
+  
+  
   return {
     paths: sitesV2.map((data: SiteV2) => ({ params: { id: data._id } })),
     // paths: [{ params: {id: "1234"} }],
@@ -55,10 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     );
     return siteV2;
   })
-  //   await queryClient.prefetchQuery(["get-site", site], async () => {
-  //   const { furnitures } = await graphQLClientP.request( FURNITURIES, { site } );
-  //   return furnitures;
-  // })
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),

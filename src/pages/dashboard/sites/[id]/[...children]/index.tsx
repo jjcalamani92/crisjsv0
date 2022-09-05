@@ -15,14 +15,14 @@ const Index: NextPage = () => {
   const { data: site } = useGetSite(getQuery(asPath)[2]);
 
   const data = getChildrenDashboard(site!, asPath)
-  console.log('children',data?.children);
+  // console.log('children',data!.children);
   
   
   return (
     <LayoutDashboard>
       <HeadingChildrenDashboard title={"Pages"} site={site!} />
       <div className="mt-6 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 lg:grid-cols-5">
-        {data?.children.map((data, i) => (
+        {data!.children.map((data, i) => (
           // eslint-disable-next-line react/no-children-prop
           <CardChildrenDashboard key={i} children={data} />
         ))}
@@ -33,6 +33,8 @@ const Index: NextPage = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { sitesV2 } = await graphQLClientS.request(SITESV2)
+  console.log(childrenPath0Dashboard(sitesV2!).map(data => ({ params: data })));
+  
   return {
     paths: childrenPath0Dashboard(sitesV2!).map(data => ({ params: data })),
     // paths: [{ params: { id: "6312c48aed202aeff0ac9081", children: ["1234"]} }],
@@ -43,6 +45,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({params}) => {
   // console.log(' params', params);
   const _id = params?.id
+
+  
   const queryClient = new QueryClient()
 
 
