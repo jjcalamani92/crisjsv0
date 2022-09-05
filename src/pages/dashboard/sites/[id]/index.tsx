@@ -14,14 +14,12 @@ import { getChildrenDashboard } from '../../../../utils/functionV2';
 const Index: NextPage = () => {
   const { asPath } = useRouter();
   const { data: site } = useGetSite(getQuery(asPath)[2]);
-  const data = getChildrenDashboard(site!, asPath)
-
   return (
     <LayoutDashboard>
       {/* <ChildrenPageDashboard site={site!} /> */}
       <HeadingChildrenDashboard title={"Pages"} site={site!} />
       <div className="mt-6 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 lg:grid-cols-5">
-        {data?.children.map((data, i) => (
+        {site?.children.map((data, i) => (
           // eslint-disable-next-line react/no-children-prop
           <CardChildrenDashboard key={i} children={data} />
         ))}
