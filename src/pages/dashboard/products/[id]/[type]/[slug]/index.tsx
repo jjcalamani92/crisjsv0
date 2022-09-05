@@ -17,12 +17,13 @@ const Index: NextPage = () => {
   const { data: sites } = useGetSites();
   const { data: site } = useGetSite(getQuery(asPath)[2]);
 
-  // const { data: allFurnitures } = useAllProductsFurniture();
+  const { data: allFurnitures } = useAllProductsFurniture();
   // const { data: allGifts } = useAllProductsGift();
   // const { data: allTeddys } = useAllProductsTeddy();
   // const { data: allJewelers } = useAllProductsJeweler();
   // const products = {furnitures:allFurnitures, gifts:allGifts, teddys:allTeddys, jewelers:allJewelers}
   // console.log(productsDashboardPathsSlugV3(sites!, products));
+  // console.log(allFurnitures);
   
   return (
     <LayoutDashboard>
