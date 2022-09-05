@@ -37,7 +37,7 @@ export const HeadingSiteDashboard: FC<HeadingSiteDashboard> = ({ title, sites })
   
   const { asPath, push, query } = useRouter()
   // const datas = getChildrenDashboard(site, asPath)
-  console.log(sitePaths(sites));
+  // console.log(sitePaths(sites));
   
   // console.log(datas);
   

@@ -14,7 +14,7 @@ const Slug: NextPage = () => {
 
   const { data: site } = useGetSite(process.env.API_SITE!);
   const {data: session} = useSession()
-  console.log(session);
+  // console.log(session);
 
   return (
     <LayoutPages site={site!}>
@@ -36,8 +36,6 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   const _id = process.env.API_SITE!
   const site = process.env.API_SITE
 
-  const session = await getSession()
-  console.log('session', session);
   
   const queryClient = new QueryClient()
 
