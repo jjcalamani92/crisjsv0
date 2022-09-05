@@ -18,7 +18,7 @@ export async function middleware(req:NextRequest) {
     const { payload } = await jwtVerify( jwt?.toString()!,
       new TextEncoder().encode("secret")
     );
-
+    
     if (payload.role === 'ADMIN_ROL') {
       // return NextResponse.redirect(new URL("/api/auth/signin", req.url));
       return NextResponse.next();
