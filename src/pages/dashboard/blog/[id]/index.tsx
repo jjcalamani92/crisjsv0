@@ -15,7 +15,6 @@ import { SiteV2 } from '../../../../interfaces/siteV2';
 const Index: NextPage = () => {
   const { asPath } = useRouter()
   const { data: site } = useGetSite(getQuery(asPath)[2]);
-  const { data: sites } = useGetSites();
   const query = getQuery(asPath)
   const { data: blogs } = useGetBlogBySite(query[2])
 

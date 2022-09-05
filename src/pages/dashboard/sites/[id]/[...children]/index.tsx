@@ -15,7 +15,7 @@ const Index: NextPage = () => {
   const { data: site } = useGetSite(getQuery(asPath)[2]);
 
   const data = getChildrenDashboard(site!, asPath)
-  // console.log('children',data?.children);
+  console.log('children',data?.children);
   
   
   return (

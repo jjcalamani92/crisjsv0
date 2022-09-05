@@ -12,7 +12,6 @@ import { getQuery } from '../../../utils/function';
 const Index: NextPage = () => {
   const {asPath} = useRouter()
 
-  const { data: site } = useGetSite(process.env.API_SITE!);
   const { data: sites } = useGetSites();
   // console.log(sites);
   

@@ -7,9 +7,6 @@ import { graphQLClientP, graphQLClientS } from '../../../../react-query/graphQLC
 import { useGetSite, useGetSites } from '../../../../react-query/reactQuery';
 import { useRouter } from 'next/router';
 import { getQuery, lastElement } from '../../../../utils/function';
-import { productsDashboardPathsV2 } from '../../../../utils/functionV2';
-import { FURNITURIES, GIFTS, JEWELERS, TEDDYS } from '../../../../graphql/query/ecommerceV2.query';
-import { CardProduct } from '../../../../components/antd/cardProduct';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HeadingDashboardProducts } from '../../../../components/heading/headingProductDashboard';

@@ -116,23 +116,26 @@ export const getChildrenDashboard = (site: SiteV2, asPath: string) => {
     return children1Dashboard(site, asPath)!;
   } else if (query.length === 4) {
     return children0Dashboard(site, asPath)!;
-  } else if (query.length === 3) {
-    return {
-      uid: "q",
-      seo: {
-        name: site?.data.name,
-        href: "#",
-        description: site?.data.description,
-        image: {
-          src: "src",
-          alt: "alt",
-        },
-      },
-      slug: "slug",
-      type: "root",
-      children: site?.children,
-    };
+  } else {
+    return null
   }
+  // else if (query.length === 3) {
+  //   return {
+  //     uid: "q",
+  //     seo: {
+  //       name: site?.data.name,
+  //       href: "#",
+  //       description: site?.data.description,
+  //       image: {
+  //         src: "src",
+  //         alt: "alt",
+  //       },
+  //     },
+  //     slug: "slug",
+  //     type: "root",
+  //     children: site?.children,
+  //   };
+  // }
 };
 export const getSite = (sites: SiteV2[], asPath: string) => {};
 export const seoV2 = (site: SiteV2, asPath: string, products?: ProductsV2) => {
