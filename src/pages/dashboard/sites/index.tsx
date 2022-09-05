@@ -17,7 +17,7 @@ const Index: NextPage = () => {
     <LayoutDashboard>
       <HeadingSiteDashboard title={ getQuery(asPath)[1] === 'products' ? 'Products' : getQuery(asPath)[1] === 'blog' ? 'Blog':'Sites' } sites={sites!} />
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
-            {sites?.filter(data => getQuery(asPath)[1] === 'products' ? data.type === 'ecommerce' : data).map((site, i:number) => (
+            {sites?.map((site, i:number) => (
               <CardSiteDashboard key={i} site={site} />
             ))}
           </div>
