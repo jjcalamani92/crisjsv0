@@ -20,28 +20,29 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 	const { asPath, query } = useRouter()
 	// console.log(asPath);
 	
-  const { data:furniture } = useGetProductFurnitureBySlug(query.slug![2]);
-  const { data:gift } = useGetProductGiftBySlug(query.slug![2]);
-	const { data:teddy } = useGetProductTeddyBySlug(query.slug![2]);
-  const { data:jeweler } = useGetProductJewelerBySlug(query.slug![2]);
-	let product!: ProductV2
-  if (query.slug![1] === 'jeweler') {
-    product = jeweler!
-  } else 
-  if (query.slug![1] === 'teddy') {
-    product = teddy!
-  } else 
-  if (query.slug![1] === 'furniture') {
-    product = furniture!
-  } else 
-	if (query.slug![1] === 'gift') {
-    product = gift!
-  }
+  // const { data:furniture } = useGetProductFurnitureBySlug(query.slug![2],);
+  // const { data:gift } = useGetProductGiftBySlug(query.slug![2]);
+	// const { data:teddy } = useGetProductTeddyBySlug(query.slug![2]);
+  // const { data:jeweler } = useGetProductJewelerBySlug(query.slug![2]);
+	// let product!: ProductV2
+  // if (query.slug![1] === 'jeweler') {
+  //   product = jeweler!
+  // } else 
+  // if (query.slug![1] === 'teddy') {
+  //   product = teddy!
+  // } else 
+  // if (query.slug![1] === 'furniture') {
+  //   product = furniture!
+  // } else 
+	// if (query.slug![1] === 'gift') {
+  //   product = gift!
+  // }
 
 
 	return (
 		<>
-			<section className="bg-white">
+		<h1>Hola</h1>
+			{/* <section className="bg-white">
 				{
 					query.slug![0] === 'dashboard' ?
 						<HeadingDashboardProduct title='Product Edit' product={product} site={site} />
@@ -49,7 +50,7 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 				}
 				<div className=" py-0 px-0 sm:px-0 lg:max-w-7xl lg:py-0 lg:px-0 grid grid-cols-1 lg:gap-6 lg:grid-cols-5">
 					<div className="col-span-3" >
-						{/* <SwiperDetail image={product.article.image} /> */}
+						{/* <SwiperDetail image={product.article.image} /> 
 						<SwiperPaginationDynamic images={product?.article.image} />
 					</div>
 					<div className="col-span-2 mt-3 lg:mt-0" >
@@ -132,14 +133,14 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
                       </RadioGroup.Option>
                     ))}
                   </div>
-                </RadioGroup> */}
+                </RadioGroup> 
 								</div>
 								{/* <button
 									type="submit"
 									className="mt-10 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-400"
 								>
 									Agregar al carrito
-								</button> */}
+								</button> 
 							</form>
 							{/* <form className="mt-5">
 								<button
@@ -148,7 +149,7 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 								>
 									Agregar al carrito
 								</button>65525049
-							</form> */}
+							</form> 
 							<a
 								href={`https://wa.me/59163039181?text=Hola%20me%20interesa%20este%20producto:%20https://regalosterrakota.vercel.app${asPath}`}
 								target={'blank'}
@@ -163,7 +164,7 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 								<p className="text-xs md:text-sm text-gray-600">{product?.article.description}</p>
 							</div>
 						</div>
-						{/* <h2 className="text-sm font-medium text-gray-900">Detalles</h2> */}
+						{/* <h2 className="text-sm font-medium text-gray-900">Detalles</h2> 
 						{
 							product?.article.details &&
 							<div className="mb-4">
@@ -176,23 +177,23 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 							<h2 className="text-md font-bold text-gray-900">Compartir</h2>
 							<div className="grid grid-cols-7 gap-2 text-pink-600 mt-4">
 								<Link href={`https://www.facebook.com`}>
-									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}> */}
+									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}> 
 									<a target={'_blank'} >
 										<FacebookOutlined style={{ fontSize: '30px' }} className="text-pink-600 " />
 									</a>
 								</Link>
 								<Link href={`#`}>
-									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}> */}
+									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}>
 									<a target={'_blank'} >
 										<WhatsAppOutlined style={{ fontSize: '30px' }} className="text-pink-600 " />
-										{/* <WhatsAppOutlined /> */}
+										{/* <WhatsAppOutlined /> 
 									</a>
 								</Link>
 								<Link href={`#`}>
-									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}> */}
+									{/* <Link href={`https://www.facebook.com/sharer.php?u=https://${site.domain}${router.asPath}`}>
 									<a target={'_blank'} >
 										<InstagramOutlined style={{ fontSize: '30px' }} className="text-pink-600 " />
-										{/* <WhatsAppOutlined /> */}
+										{/* <WhatsAppOutlined /> 
 									</a>
 								</Link>
 							</div>
@@ -206,7 +207,7 @@ export const ProductOverview: FC<ProductOverview> = ({ site }) => {
 						null
 						: <MoreProduct />
 				}
-			</section>
+			</section> */}
 		</>
 	)
 }
