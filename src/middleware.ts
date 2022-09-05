@@ -19,10 +19,8 @@ export async function middleware(req:NextRequest) {
       new TextEncoder().encode("secret")
     );
 
-    if (payload.role !== 'ADMIN_ROL') {
-      return NextResponse.redirect(new URL("/api/auth/signin", req.url));
-    } else {
-
+    if (payload.role === 'ADMIN_ROL') {
+      // return NextResponse.redirect(new URL("/api/auth/signin", req.url));
       return NextResponse.next();
     }
 
