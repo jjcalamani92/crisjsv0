@@ -1,5 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import Markdown, { compiler } from 'markdown-to-jsx';
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from "react-syntax-highlighter";
 import atomOneDark from "react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-dark";
@@ -234,7 +235,7 @@ export const Article = () => {
       </div>
       <div className="pt-12 border-t dark:border-gray-700">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-          <img src="https://res.cloudinary.com/dqsbh2kn0/image/upload/v1662000520/d11idlulvsozv4qtw25j.jpg" />
+          <Image width={100} height={100} objectFit="contain" src="https://res.cloudinary.com/dqsbh2kn0/image/upload/v1662000520/d11idlulvsozv4qtw25j.jpg" alt='image description'/>
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold">Jesus Calamani</h4>
             <p className="dark:text-gray-400">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.</p>
