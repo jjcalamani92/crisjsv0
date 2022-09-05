@@ -13,32 +13,33 @@ import { CardProduct } from '../../../../../components/antd/cardProduct'
 import { HeadingDashboardProducts } from '../../../../../components/heading/headingProductDashboard'
 
 const Index: NextPage = () => {
-  const {asPath, query} = useRouter()
-  const { data: site } = useGetSite(getQuery(asPath)[2]);
+  const {asPath} = useRouter();
+  const query = getQuery(asPath);
   const { data: sites } = useGetSites();
-
-  const { data: furnitures } = useGetProductsFurniture(getQuery(asPath)[2]);
-  const { data: gifts } = useGetProductsGift(getQuery(asPath)[2]);
-  const { data: teddys } = useGetProductsTeddy(getQuery(asPath)[2]);
-  const { data: jewelers } = useGetProductsJeweler(getQuery(asPath)[2]);
-  const { data: clothings } = useGetProductsClothing(getQuery(asPath)[2]);
+  
+  const { data: site } = useGetSite(query[2]);
+  const { data: furnitures } = useGetProductsFurniture(query[2]);
+  const { data: gifts } = useGetProductsGift(query[2]);
+  const { data: teddys } = useGetProductsTeddy(query[2]);
+  const { data: jewelers } = useGetProductsJeweler(query[2]);
+  const { data: clothings } = useGetProductsClothing(query[2]);
   const productos = {furnitures, gifts, teddys, jewelers, clothings}
   console.log(productsDashboardPathsSlugV3(sites!, productos));
   
   let products!: ProductV2[]
-  if (getQuery(asPath)[3] === 'clothing') {
+  if (query[3] === 'clothing') {
     products = clothings!
   } else 
-  if (getQuery(asPath)[3] === 'jeweler') {
+  if (query[3] === 'jeweler') {
     products = jewelers!
   } else 
-  if (getQuery(asPath)[3] === 'teddy') {
+  if (query[3] === 'teddy') {
     products = teddys!
   } else 
-  if (getQuery(asPath)[3] === 'furniture') {
+  if (query[3] === 'furniture') {
     products = furnitures!
   } else 
-  if (getQuery(asPath)[3] === 'gift') {
+  if (query[3] === 'gift') {
     products = gifts!
   }
   return (

@@ -1,6 +1,5 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { SitesDashboard } from '../../../../components/dashboard/siteDashboard';
 import { SITESV2, SITEV2 } from '../../../../graphql/query/siteV2.query';
 import { SiteV2 } from '../../../../interfaces/siteV2';
 import { LayoutDashboard } from '../../../../layouts'
@@ -8,19 +7,18 @@ import { graphQLClientS } from '../../../../react-query/graphQLClient';
 import { useGetSite, useGetSites } from '../../../../react-query/reactQuery';
 import { useRouter } from 'next/router';
 import { getQuery, lastElement } from '../../../../utils/function';
-import { ChildrenPageDashboard } from '../../../../components';
 import { HeadingChildrenDashboard } from '../../../../components/heading/headingChildrenDashboard';
 import { CardChildrenDashboard } from '../../../../components/antd/cardChildren';
 import { getChildrenDashboard } from '../../../../utils/functionV2';
 
 const Index: NextPage = () => {
-  const { asPath, query } = useRouter();
+  const { asPath } = useRouter();
   const { data: site } = useGetSite(getQuery(asPath)[2]);
   const data = getChildrenDashboard(site!, asPath)
 
   return (
     <LayoutDashboard>
-      <ChildrenPageDashboard site={site!} />
+      {/* <ChildrenPageDashboard site={site!} /> */}
       <HeadingChildrenDashboard title={"Pages"} site={site!} />
       <div className="mt-6 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 lg:grid-cols-5">
         {data?.children.map((data, i) => (
@@ -46,12 +44,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const _id = params?.id
   const queryClient = new QueryClient()
 
-  await queryClient.prefetchQuery(["get-sites"], async () => {
-    const { sitesV2 } = await graphQLClientS.request(
-      SITESV2
-    );
-    return sitesV2;
-  })
+  // await queryClient.prefetchQuery(["get-sites"], async () => {
+  //   const { sitesV2 } = await graphQLClientS.request(
+  //     SITESV2
+  //   );
+  //   return sitesV2;
+  // })
   await queryClient.prefetchQuery(["get-site", _id], async () => {
     const { siteV2 } = await graphQLClientS.request(
       SITEV2,

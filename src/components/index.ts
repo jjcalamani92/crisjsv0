@@ -1,6 +1,5 @@
 export * from './404'
 export * from './page/childrenPage'
-export * from './dashboard/childrenDashboard'
 export * from './header/headerDashboard'
 export * from './header/headerPage'
 export * from './heading/headingDashboardProduct'
