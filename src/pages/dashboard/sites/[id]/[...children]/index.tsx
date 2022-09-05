@@ -14,19 +14,23 @@ const Index: NextPage = () => {
   const {asPath} = useRouter()
   const { data: site } = useGetSite(getQuery(asPath)[2]);
 
-  const children = getChildrenDashboard(site!, asPath)
-  console.log('children',children!.children);
+  const data = getChildrenDashboard(site!, asPath)
+
   
   
   return (
     <LayoutDashboard>
       <HeadingChildrenDashboard title={"Pages"} site={site!} />
+      {
+        data?.children ?
       <div className="mt-6 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 lg:grid-cols-5">
-        {children!.children.map((data, i) => (
+        {data!.children.map((data, i) => (
           // eslint-disable-next-line react/no-children-prop
           <CardChildrenDashboard key={i} children={data} />
         ))}
       </div>
+      : null
+      }
     </LayoutDashboard>
   )
 }
