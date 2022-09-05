@@ -45,11 +45,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 //   console.log(metric)
 // }
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
-  if (metric.label === 'web-vital') {
-    // console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
-  }
-}
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   if (metric.label === 'web-vital') {
+//     // console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
+//   }
+// }
 // export const getServerSideProps: GetServerSideProps = async (context) => {
 //     const session = await getSession(context)
 //     console.log(session);
