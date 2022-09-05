@@ -14,7 +14,7 @@ const Slug: NextPage = () => {
 
   const { data: site } = useGetSite(process.env.API_SITE!);
   const {data: session} = useSession()
-  // console.log(session);
+  console.log(session);
 
   return (
     <LayoutPages site={site!}>

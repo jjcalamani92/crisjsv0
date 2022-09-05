@@ -5,7 +5,7 @@ import { getCsrfToken } from "next-auth/react"
 import jwt from 'next-auth/jwt';
 const Index: NextPage = () => {
   const {data: session} = useSession()
-  // console.log(session);
+  console.log(session);
   
   return (
     <LayoutDashboard>
