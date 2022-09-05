@@ -14,15 +14,15 @@ const Index: NextPage = () => {
   const {asPath} = useRouter()
   const { data: site } = useGetSite(getQuery(asPath)[2]);
 
-  const data = getChildrenDashboard(site!, asPath)
-  // console.log('children',data!.children);
+  const children = getChildrenDashboard(site!, asPath)
+  console.log('children',children!.children);
   
   
   return (
     <LayoutDashboard>
       <HeadingChildrenDashboard title={"Pages"} site={site!} />
       <div className="mt-6 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 lg:grid-cols-5">
-        {data!.children.map((data, i) => (
+        {children!.children.map((data, i) => (
           // eslint-disable-next-line react/no-children-prop
           <CardChildrenDashboard key={i} children={data} />
         ))}
@@ -33,7 +33,7 @@ const Index: NextPage = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { sitesV2 } = await graphQLClientS.request(SITESV2)
-  console.log(childrenPath0Dashboard(sitesV2!).map(data => ({ params: data })));
+  // console.log(childrenPath0Dashboard(sitesV2!).map(data => ({ params: data })));
   
   return {
     paths: childrenPath0Dashboard(sitesV2!).map(data => ({ params: data })),
@@ -49,6 +49,12 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   
   const queryClient = new QueryClient()
 
+  await queryClient.prefetchQuery(["get-sites"], async () => {
+    const { sitesV2 } = await graphQLClientS.request(
+      SITESV2
+    );
+    return sitesV2;
+  })
 
   await queryClient.prefetchQuery(["get-site", _id], async () => {
     const { siteV2 } = await graphQLClientS.request(
