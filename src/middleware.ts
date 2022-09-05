@@ -4,9 +4,10 @@ import { jwtVerify } from "jose";
 export async function middleware(req:NextRequest) {
   const jwt = req.cookies.get('token')
   const jwt2 = req.cookies.get('next-auth.session-token')
+  const jwt3 = req.cookies.get('__Secure-next-auth.session-token')
   // console.log('jwt2', jwt2);
   
-  if (!jwt2) return NextResponse.redirect(new URL("/api/auth/signin", req.url));
+  if (!jwt2 || !jwt3 ) return NextResponse.redirect(new URL("/api/auth/signin", req.url));
   // console.log('token', req.cookies.get('token'))
   // console.log('next-auth.session-token', req.cookies.get('next-auth.session-token'))
   // const { payload } = await jwtVerify( jwt as string,
