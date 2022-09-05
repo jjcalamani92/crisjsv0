@@ -238,7 +238,7 @@ export const Article = () => {
           <Image width={100} height={100} objectFit="contain" src="https://res.cloudinary.com/dqsbh2kn0/image/upload/v1662000520/d11idlulvsozv4qtw25j.jpg" alt='image description'/>
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold">Jesus Calamani</h4>
-            <p className="dark:text-gray-400">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.</p>
+            <p className="dark:text-gray-400">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh. i am</p>
           </div>
         </div>
         <div className="flex justify-center pt-4 space-x-4 align-center">
