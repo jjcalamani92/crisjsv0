@@ -53,6 +53,9 @@ const nextAuthOptions = (req: NextApiRequest, res: any) => {
       }
     }),
     ],
+    // pages:{
+    //   signIn: '/auth/login',
+    // },
     callbacks: {
           async jwt({token, account, user}:any) {
             // console.log('jwt', {token, account, user});

@@ -4,7 +4,7 @@ import { jwtVerify } from "jose";
 export async function middleware(req:NextRequest) {
   const jwt = req.cookies.get('token')
   const jwt2 = req.cookies.get('next-auth.session-token')
-  console.log('jwt2', jwt2);
+  // console.log('jwt2', jwt2);
   
   if (!jwt2) return NextResponse.redirect(new URL("/api/auth/signin", req.url));
   // console.log('token', req.cookies.get('token'))
@@ -48,4 +48,4 @@ export async function middleware(req:NextRequest) {
   // }
 // )
 
-export const config = { matcher: ["/dashboard"] }
+export const config = { matcher: ["/dashboard/:path*"] }
