@@ -74,7 +74,6 @@ export const CardChildrenDashboard:FC<CardChildrenDashboard> = ({children}) => {
           }
         await graphQLClientS.request(DELETE_CHILDREN_0, VARIABLES )
         queryClient.invalidateQueries(["get-site"])
-
 			}
 		})
   }
